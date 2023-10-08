@@ -1,0 +1,32 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+@* New Section Outlet *@
+<SectionOutlet SectionName="title" />
+
+@* New Enhanced Form Handling *@
+<EditForm method="post" Model="@this" OnSubmit="@Submit" FormName="Submit" class="text-center">
+    <div class="form-group">
+        <InputText @bind-Value="Value" class="form-control m-1" placeholder="Enter title to display" />
+    </div>
+    <button type="submit" class="btn btn-primary m-1">Submit</button>
+</EditForm>
+
+@if (_isSubmitted)
+{
+    @* New Section Content *@
+    <SectionContent SectionName="title">
+        <h1 class="text-center">@Value</h1>
+    </SectionContent>
+}
+
+@code {
+    private bool _isSubmitted = false;
+
+    [SupplyParameterFromForm]
+    public string? Value { get; set; }
+
+    private void Submit() => 
+        _isSubmitted = true;
+}

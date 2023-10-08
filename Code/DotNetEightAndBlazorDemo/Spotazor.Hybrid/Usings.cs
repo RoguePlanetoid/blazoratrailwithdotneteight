@@ -1,0 +1,15 @@
+﻿global using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
+global using Application = System.Windows.Application;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Spotazor.Library;
+global using Spotazor.Hybrid.Bindings;
+global using Spotazor.Hybrid.Models;
+global using System.ComponentModel;
+global using System.Globalization;
+global using System.IO;
+global using System.Net.Http;
+global using System.Runtime.CompilerServices;
+global using System.Windows;
+global using System.Windows.Data;
+global using System.Windows.Input;

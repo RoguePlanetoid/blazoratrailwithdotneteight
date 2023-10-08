@@ -1,0 +1,57 @@
+﻿@namespace Spotazor.Client
+@inject Provider _provider;
+
+@if(Model!.Embed != null)
+{
+	<div class="text-center m-2">
+		<img src="@Model?.Embed.ThumbnailUrl" height="@Model?.Embed.ThumbnailHeight" width="@Model?.Embed.ThumbnailWidth" /><br />
+		<img src="@Model?.SpotifyCode" width="@Model?.Embed.ThumbnailWidth" /><br />
+		<EditForm Model="@Model?.Request" OnValidSubmit="Update" class="text-center">
+			<DataAnnotationsValidator />
+			<div class="row m-1">
+				<div class="col">
+					<input @onchange="@Background" type="color" value="@Model!.Request.Background"
+						   class="form-control form-control-color" />
+				</div>
+				<div class="col">
+					<InputSelect @bind-Value="@Model!.Request.Bar" class="form-select">
+						@foreach (var value in Enum.GetValues<SpotifyCodeBar>())
+						{
+							<option value="@value">@value</option>
+						}
+					</InputSelect>
+				</div>
+				<div class="col">
+					<InputNumber @bind-Value="@Model!.Request.Size" class="form-control" />
+				</div>
+				<div class="col text-start">
+					<InputSelect @bind-Value="@Model!.Request.Format" class="form-select">
+						@foreach (var value in Enum.GetValues<SpotifyCodeFormat>())
+						{
+							<option value="@value">@value</option>
+						}
+					</InputSelect>
+				</div>
+			</div>
+			<ValidationMessage For="@(() => Model!.Request.Size)" />
+			<button type="submit" class="btn btn-primary m-1">Update Code</button>
+		</EditForm>
+		<a href="@Model!.SpotifyCode" class="btn btn-success m-1" target="_blank">Open Code</a>
+	</div>
+}
+
+@code
+{
+	[Parameter]
+	public Model? Model { get; set; }
+
+	private void Update() => 
+		_provider.GetCode(Model);
+
+	private void Background(ChangeEventArgs changed)
+    {
+		var background = changed.Value as string;
+		if (background != null)
+			Model!.Request.Background = background;
+	}
+}

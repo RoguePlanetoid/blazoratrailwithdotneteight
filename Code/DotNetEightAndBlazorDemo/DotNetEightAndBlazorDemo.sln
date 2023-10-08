@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{0CB0813B-0E61-4E0E-AF17-DC0FFB6F4E3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotazor.Library", "Spotazor.Library\Spotazor.Library.csproj", "{A6D75416-EC02-467B-8427-F4F7E5FEFC12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotazor.Client", "Spotazor.Client\Spotazor.Client.csproj", "{F50268F8-73E5-457A-865B-BC679E68DC40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotazor.Hybrid", "Spotazor.Hybrid\Spotazor.Hybrid.csproj", "{50888035-C960-4967-9231-DA3FB276C31E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetEight.CSharp", "DotNetEight.CSharp\DotNetEight.CSharp.csproj", "{7D99F742-C060-4176-BF76-DE77BEA1B411}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetEight.Blazor.Client", "DotNetEight.Blazor.Client\DotNetEight.Blazor.Client.csproj", "{DBB86782-779C-4C83-89E6-D052EB9C74C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetEight.Blazor", "DotNetEight.Blazor\DotNetEight.Blazor.csproj", "{69AFCC2B-872A-4361-8A0E-1B1F5543BF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetEight.Blazor.Direct", "DotNetEight.Blazor.Direct\DotNetEight.Blazor.Direct.csproj", "{CFE7D1FE-BEFD-4565-B92E-8C9FE54871D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6D75416-EC02-467B-8427-F4F7E5FEFC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D75416-EC02-467B-8427-F4F7E5FEFC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D75416-EC02-467B-8427-F4F7E5FEFC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D75416-EC02-467B-8427-F4F7E5FEFC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50268F8-73E5-457A-865B-BC679E68DC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50268F8-73E5-457A-865B-BC679E68DC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50268F8-73E5-457A-865B-BC679E68DC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50268F8-73E5-457A-865B-BC679E68DC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50888035-C960-4967-9231-DA3FB276C31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50888035-C960-4967-9231-DA3FB276C31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50888035-C960-4967-9231-DA3FB276C31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50888035-C960-4967-9231-DA3FB276C31E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D99F742-C060-4176-BF76-DE77BEA1B411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D99F742-C060-4176-BF76-DE77BEA1B411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D99F742-C060-4176-BF76-DE77BEA1B411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D99F742-C060-4176-BF76-DE77BEA1B411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB86782-779C-4C83-89E6-D052EB9C74C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB86782-779C-4C83-89E6-D052EB9C74C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB86782-779C-4C83-89E6-D052EB9C74C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB86782-779C-4C83-89E6-D052EB9C74C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AFCC2B-872A-4361-8A0E-1B1F5543BF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AFCC2B-872A-4361-8A0E-1B1F5543BF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69AFCC2B-872A-4361-8A0E-1B1F5543BF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AFCC2B-872A-4361-8A0E-1B1F5543BF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE7D1FE-BEFD-4565-B92E-8C9FE54871D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE7D1FE-BEFD-4565-B92E-8C9FE54871D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE7D1FE-BEFD-4565-B92E-8C9FE54871D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE7D1FE-BEFD-4565-B92E-8C9FE54871D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6D75416-EC02-467B-8427-F4F7E5FEFC12} = {0CB0813B-0E61-4E0E-AF17-DC0FFB6F4E3C}
+		{F50268F8-73E5-457A-865B-BC679E68DC40} = {0CB0813B-0E61-4E0E-AF17-DC0FFB6F4E3C}
+		{50888035-C960-4967-9231-DA3FB276C31E} = {0CB0813B-0E61-4E0E-AF17-DC0FFB6F4E3C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A4ABC43-025C-40E2-B686-FE8C9B0A0441}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,40 @@
+﻿@page "/"
+@using Spotazor.Library;
+@inject Provider _provider;
+
+<PageTitle>Spotazor</PageTitle>
+
+<h1 class="text-center">@Model?.Embed?.Title</h1>
+
+<div class="container">
+	<div class="row">
+		<EditForm Model="@Model" class="text-center">
+			<div class="form-group">
+				<InputText id="url" class="form-control m-1" @bind-Value="Model!.Url" placeholder="Enter a Spotify URL to get started" />
+			</div>
+			<button type="button" class="btn btn-primary m-1" @onclick="Submit">Get from Spotify</button>
+			<p>
+				Powered by <a href="https://developer.spotify.com/documentation/embeds" target="_blank">Spotify Embeds</a>
+				and <a href="https://www.spotifycodes.com/" target="_blank">Spotify Codes</a>
+			</p>
+		</EditForm>
+		@if (Model?.Embed != null)
+		{
+			<div class="col text-center m-2">
+				<SpotifyEmbed Embed="@Model.Embed" />
+			</div>
+			<div class="col">
+				<SpotifyCode Model="@Model" />
+			</div>
+		}			
+	</div>
+</div>
+
+@code
+{
+	public async Task Submit() =>
+		Model = await _provider.GetModel(Model);
+
+	[Parameter]
+	public Model Model { get; set; } = new();
+}

@@ -1,0 +1,12 @@
+﻿@namespace Spotazor.Hybrid
+@inject ApplicationProvider _provider;
+<div class="container">
+	<div class="row">
+		<div class="col text-center m-2">
+			<SpotifyEmbed Embed="@_provider.Content.Model.Embed" />
+		</div>
+		<div class="col">
+			<SpotifyCode Model="@_provider.Content.Model" />
+		</div>
+	</div>
+</div>
