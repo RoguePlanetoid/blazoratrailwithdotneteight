@@ -1,0 +1,1 @@
+await WebAssemblyHostBuilder.CreateDefault(args).Build().RunAsync();
