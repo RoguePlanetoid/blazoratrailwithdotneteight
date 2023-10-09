@@ -17,7 +17,7 @@ jobs:
          dotnet-version: 8.0.100-rc.1.23463.5
      # Publish Blazor Project to Release Folder
      - name: Publish Blazor Project
-       run: dotnet publish Code/DotNetEightAndBlazorDemo/Spotazor.Client.csproj -c Release -o release --nologo
+       run: dotnet publish Code/DotNetEightAndBlazorDemo/Spotazor.Client/Spotazor.Client.csproj -c Release -o release --nologo
      # Change "base-tag" to match GitHub Pages Repository
      - name: Change base-tag in index.html from / to spotazor
        run: sed -i 's/<base href="\/" \/>/<base href="\/blazoratrailwithdotneteight\/" \/>/g' release/wwwroot/index.html       
