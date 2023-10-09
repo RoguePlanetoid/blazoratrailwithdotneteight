@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+# Run Workflow on every push to "main" Branch
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy-to-github-pages:
+    # Run Steps on "ubuntu-latest" image
+    runs-on: ubuntu-latest
+    steps:
+     # Use "checkout" Action to Checkout code from main Branch
+     - uses: actions/checkout@v2
+     # Use "setup-dotnet" Action with .NET 8.0 SDK
+     - name: Setup .NET 8 SDK
+       uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: 8.0.100-rc.1.23463.5
+     # Publish Blazor Project to Release Folder
+     - name: Publish Blazor Project
+       run: dotnet publish Code/DotNetEightAndBlazorDemo/Spotazor.Client.csproj -c Release -o release --nologo
+     # Change "base-tag" to match GitHub Pages Repository
+     - name: Change base-tag in index.html from / to spotazor
+       run: sed -i 's/<base href="\/" \/>/<base href="\/blazoratrailwithdotneteight\/" \/>/g' release/wwwroot/index.html       
+     # Add ".nojekyll" to not treat as a Jekyll allowing files or folders starting with an underscore
+     - name: Add .nojekyll file
+       run: touch release/wwwroot/.nojekyll
+     # Use "github-pages-deploy-action" Action to Commit "wwwroot" to "gh-pages" Branch
+     - name: Commit wwwroot to GitHub Pages
+       uses: JamesIves/github-pages-deploy-action@3.7.1
+       with:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         branch: gh-pages
+         folder: release/wwwroot
